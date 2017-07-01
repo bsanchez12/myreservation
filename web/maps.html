@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Info windows</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      // This example displays a marker at the center of Australia.
+      // When the user clicks the marker, an info window opens.
+
+      function initMap() {
+        var bogota = {lat: 4.603049279152846, lng: -74.11103767489624};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: bogota
+        });
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Salon Comunal Cantalejo</h1>'+
+            '<div id="bodyContent">'+
+            '<p><b>Salon Comunal Cantalejo</b>Salón comunal Barrio Nuevo Delicias, ' + 
+			'ubicado en la localidad de Kennedy, presta todo tipo de servicio para eventos en general, tanto particulares como comunitarios, con precios accesibles.</p>'+
+            '<p>Referencia: Salon comunal Catalejo, <a href="https://www.civico.com/lugar/salon-comunal-nuevo-delicias-bogota/">'+
+            'https://www.civico.com/lugar/salon-comunal-nuevo-delicias-bogota/</a> </p>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: bogota,
+          map: map,
+          title: 'Bogota (Salon Comunal Cantalejo)'
+        });
+		
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+		
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5kxy1rTk0QwtQQuhqwNA9RwxPi1fMOuQ&callback=initMap">
+    </script>
+  </body>
+</html>
