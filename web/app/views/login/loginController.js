@@ -1,5 +1,5 @@
 var method = 'POST';
-var url = '../../resources/crudDynamic/crudQ.php';
+var url = '../../../app/resources/crudDynamic/crudQ.php';
 var headers = {'Content-Type': 'application/json; charset=UTF-8'};
 var req = {};
 
