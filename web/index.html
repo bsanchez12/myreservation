@@ -104,12 +104,15 @@
 
 					  request = $.ajax({
 						url: "https://myreservation.herokuapp.com/app/resources/crudDynamic/crudQ.php",
-						type: "post",
+						type: "POST",
+						beforeSend: function(request) {
+							request.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+							},
 						data: {
 							 comando: 'insert',
 							 table: 'user',							 
 							 where: 'Email = "'+ response.email +'"',
-							 UserId: 2,
+							 UserId: 3,
 							 UserName: response.name,
 							 Email: response.email,
 							 Password: 123456
