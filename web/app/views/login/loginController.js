@@ -28,7 +28,7 @@ app.controller("loginController", ['$http','$scope', '$rootScope', '$filter', '$
 					  alert("Usuario existe");
 					}
 					else{
-						alert("Usuario no existe");
+						alert("El usuario o la contraseña no coinciden");
 					}				
 				}else{          
 					if(response.data.success == undefined){
