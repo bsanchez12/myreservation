@@ -22,7 +22,7 @@ abstract class CrudModel
 	/**
 	* @desc nombre de la base de datos	
 	*/	
-    public $_dbName = "ventateorienta";
+    public $_dbName = "pruebaevento";
 
 	/**
 	* @desc será accesible y utilizada por las clases que hereden para realizar las consultas	
