@@ -73,7 +73,7 @@
 				var js, fjs = d.getElementsByTagName(s)[0];
 				if (d.getElementById(id)) return;
 				js = d.createElement(s); js.id = id;
-				js.src = "scripts/sdkfacebook.js";
+				js.src = "scripts/sdk.js";
 				fjs.parentNode.insertBefore(js, fjs);
 			  }(document, 'script', 'facebook-jssdk'));
 
@@ -99,9 +99,8 @@
 	<script type="text/javascript" src="scripts/angular-route.js"></script>
 
 
-	<script src="scripts/app.js"></script>	
-	<script src="scripts/sdkfacebook.js"></script>	
-	<script src="app/views/login/login.js"></script>		
+	<script src="scripts/app.js"></script>		
+	<script src="app/views/login/loginController.js"></script>		
 
 </body>
 
