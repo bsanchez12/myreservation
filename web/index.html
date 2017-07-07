@@ -85,7 +85,9 @@
 				console.log('Welcome!  Fetching your information.... ');
 				FB.api('/me?fields=name,picture,email', function(response) {	  
 				  console.log('Successful login for: ' + response.email);	
+				  
 					debugger;
+					
 					var req = {
 						 method: 'POST',
 						 url: 'https://myreservation.herokuapp.com/app/resources/crudDynamic/crudQ.php',
@@ -99,24 +101,22 @@
 							 Email: response.email,
 							 Password: 123456
 						}
-					};
-							
-					$http(req).then(function(response){
-						if(response.data.success){              
-							if(response.data.results.length > 0){             
-							   alert("Usuario registrado con exito");
-							}
-							else{
-								 alert("Usuario registrado sin exito");
-							}               
-						}else{          
-							if(response.data.success == undefined){
-								 alert("Error en conexión");
-							} 
-						}
-					});
-				  
-				  
+					};					
+					
+					$.post("https://myreservation.herokuapp.com/app/resources/crudDynamic/crudQ.php",
+						{
+							comando: 'insert',
+							 table: 'user',							 
+							 where: 'Email = "'+ response.email +'"',
+							 UserId: 2,
+							 UserName: response.name,
+							 Email: response.email,
+							 Password: 123456
+						},
+						function(data, status){
+							alert("Data: " + data + "\nStatus: " + status);
+						});											
+					
 				});
 			  }
 	</script>
