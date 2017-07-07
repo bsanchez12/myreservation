@@ -82,7 +82,7 @@
 	  debugger;
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Gracias por iniciar sesion en, ' + response.name + '!';
+        'Gracias por iniciar sesion en, ' + response.name + '!, informacion adicional ' + response;
     });
   }
 </script>
@@ -102,26 +102,26 @@
 			 	</div>
 			  	<div class="panel-body">
 			    	<form accept-charset="UTF-8" role="form">
-                    <fieldset>
-			    	  	<div class="form-group">
-			    		    <input class="form-control" placeholder="Ingresa tu email" name="email" type="text">
-			    		</div>
-			    		<div class="form-group">
-			    			<input class="form-control" placeholder="Ingresa tu password" name="password" type="password" value="">
-			    		</div>
-			    		<div class="checkbox">
-			    	    	<label>
-			    	    		<input name="remember" type="checkbox" value="Remember Me"> Recordarme
-			    	    	</label>
-			    	    </div>
-			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
-			    	</fieldset>
+						<fieldset>
+							<div class="form-group">
+								<input class="form-control" placeholder="Ingresa tu email" name="email" type="text">
+							</div>
+							<div class="form-group">
+								<input class="form-control" placeholder="Ingresa tu password" name="password" type="password" value="">
+							</div>
+							<div class="checkbox">
+								<label>
+									<input name="remember" type="checkbox" value="Remember Me"> Recordarme
+								</label>
+							</div>
+							<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+						</fieldset>
 			      	</form>
-                      <hr/>                    
+                      <hr/> 				
 					<div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true">
 					</div>
-					<!-- <div id="status"> -->
-					<!-- </div> -->
+					<div id="status">
+					</div>
 			    </div>
 			</div>
 		</div>
