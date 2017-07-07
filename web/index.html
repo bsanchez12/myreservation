@@ -114,8 +114,7 @@
 							 UserName: response.name,
 							 Email: response.email,
 							 Password: 123456
-						},
-						beforeSend: function(xhr){xhr.setRequestHeader('Content-Type', 'application/json');}
+						}						
 					});
 																				
 					request.done(function (response, textStatus, jqXHR){
