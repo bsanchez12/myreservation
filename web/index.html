@@ -105,11 +105,12 @@
 					  request = $.ajax({
 						url: "https://myreservation.herokuapp.com/app/resources/crudDynamic/crudQ.php",
 						type: "POST",
-						headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+						dataType : "json",
+						headers: {"Content-Type": "application/json; charset=UTF-8"},
 						data: {
-							 comando: 'insert',
-							 table: 'user',							 
-							 where: 'Email = "'+ response.email +'"',
+							 comando: "insert",
+							 table: "user",							 
+							 where: "Email = '"+ response.email + "'",
 							 UserId: 3,
 							 UserName: response.name,
 							 Email: response.email,
@@ -119,7 +120,7 @@
 																				
 					request.done(function (response, textStatus, jqXHR){
 						// Log a message to the console
-						alert("Registro exitoso");
+						alert("Resgitro existoso");
 					});
 
 					// Callback handler that will be called on failure
