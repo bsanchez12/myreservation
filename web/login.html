@@ -78,9 +78,8 @@
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-	  debugger;
-      console.log('Successful login for: ' + response.name);
+    FB.api('/me', function(response) {	  
+      console.log('Successful login for: ' + response);
       document.getElementById('status').innerHTML =
         'Gracias por iniciar sesion en, ' + response.name + '!, informacion adicional ' + response;
     });
