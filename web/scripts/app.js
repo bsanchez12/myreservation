@@ -1,13 +1,7 @@
-var app = angular.module('practica', ["ngRoute"]);
+var app = angular.module('evento', ["ngRoute"]);
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-        templateUrl : "scripts/main/views/Login.html"
-    })
-    .when("/CodeCreator", {
-        templateUrl : "scripts/codeCreate/views/CodeCreate.html"
-    })
-    .when("/UpdateBySerial", {
-        templateUrl : "scripts/updatebyserials/views/UpdateBySerial.html"
-    });
+        templateUrl : "app/views/login/login.html"
+    })   
 });
