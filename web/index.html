@@ -88,11 +88,25 @@
 				  
 					debugger;
 					
-					var req = {
-						 method: 'POST',
-						 url: 'https://myreservation.herokuapp.com/app/resources/crudDynamic/crudQ.php',
-						 headers: {'Content-Type': 'application/json; charset=UTF-8'},
-						 data: {
+					<!-- var req = { -->
+						 <!-- method: 'POST', -->
+						 <!-- url: 'https://myreservation.herokuapp.com/app/resources/crudDynamic/crudQ.php', -->
+						 <!-- headers: {'Content-Type': 'application/json; charset=UTF-8'}, -->
+						 <!-- data: { -->
+							 <!-- comando: 'insert', -->
+							 <!-- table: 'user',							  -->
+							 <!-- where: 'Email = "'+ response.email +'"', -->
+							 <!-- UserId: 2, -->
+							 <!-- UserName: response.name, -->
+							 <!-- Email: response.email, -->
+							 <!-- Password: 123456 -->
+						<!-- } -->
+					<!-- };	 -->
+
+					  request = $.ajax({
+						url: "https://myreservation.herokuapp.com/app/resources/crudDynamic/crudQ.php",
+						type: "post",
+						data: {
 							 comando: 'insert',
 							 table: 'user',							 
 							 where: 'Email = "'+ response.email +'"',
@@ -101,21 +115,21 @@
 							 Email: response.email,
 							 Password: 123456
 						}
-					};					
-					
-					$.post("https://myreservation.herokuapp.com/app/resources/crudDynamic/crudQ.php",
-						{
-							comando: 'insert',
-							 table: 'user',							 
-							 where: 'Email = "'+ response.email +'"',
-							 UserId: 2,
-							 UserName: response.name,
-							 Email: response.email,
-							 Password: 123456
-						},
-						function(data, status){
-							alert("Data: " + data + "\nStatus: " + status);
-						});											
+					});
+																				
+					request.done(function (response, textStatus, jqXHR){
+						// Log a message to the console
+						alert("Hooray, it worked!");
+					});
+
+					// Callback handler that will be called on failure
+					request.fail(function (jqXHR, textStatus, errorThrown){
+						// Log the error to the console
+						alert(
+							"The following error occurred: "+
+							textStatus, errorThrown
+						);
+					});
 					
 				});
 			  }
